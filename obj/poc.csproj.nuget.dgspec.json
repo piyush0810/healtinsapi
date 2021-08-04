@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\users\\pkuma701\\documents\\insbackend\\healtinsapi\\poc.csproj": {}
+    "C:\\Users\\pkuma701\\Documents\\insbackend\\healtinsapi\\poc.csproj": {}
   },
   "projects": {
-    "C:\\users\\pkuma701\\documents\\insbackend\\healtinsapi\\poc.csproj": {
+    "C:\\Users\\pkuma701\\Documents\\insbackend\\healtinsapi\\poc.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\users\\pkuma701\\documents\\insbackend\\healtinsapi\\poc.csproj",
+        "projectUniqueName": "C:\\Users\\pkuma701\\Documents\\insbackend\\healtinsapi\\poc.csproj",
         "projectName": "poc",
-        "projectPath": "C:\\users\\pkuma701\\documents\\insbackend\\healtinsapi\\poc.csproj",
+        "projectPath": "C:\\Users\\pkuma701\\Documents\\insbackend\\healtinsapi\\poc.csproj",
         "packagesPath": "C:\\Users\\pkuma701\\.nuget\\packages\\",
-        "outputPath": "C:\\users\\pkuma701\\documents\\insbackend\\healtinsapi\\obj\\",
+        "outputPath": "C:\\Users\\pkuma701\\Documents\\insbackend\\healtinsapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pkuma701\\AppData\\Roaming\\NuGet\\NuGet.Config"

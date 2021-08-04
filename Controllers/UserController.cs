@@ -1,3 +1,7 @@
+
+using healtinsapi.Data;
+using healtinsapi.Dtos;
+using healtinsapi.Interfaces;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using poc.Data;
@@ -9,54 +13,65 @@ using System.Threading.Tasks;
 
 namespace poc.Controllers
 {
+
+    
     [Route("api/[controller]")]
     [ApiController]
-    public class UserController : ControllerBase {
-        private readonly DataContext dc;
 
-        public UserController(DataContext dc) {
-            this.dc = dc;
+
+    public class UserController : ControllerBase
+    {
+        
+        private readonly IUnitOfWork uow;
+
+        public UserController(IUnitOfWork uow)
+        {
+            this.uow = uow;
+            this.uow = uow;
         }
         [HttpGet]
         public async Task<IActionResult> GetCities()
         {
-            var users = dc.Users.ToList();
+            var users = await uow.UserRepository.GetUsersAsync();
 
             return Ok(users);
-            
+
         }
 
         [HttpPost("ADD")]
-        public async Task<IActionResult> AddCity(User user)
+        public async Task<IActionResult> AddUser(User user)
         {
-    
-            await dc.Users.AddAsync(user);
-            await dc.SaveChangesAsync();
-            return Ok(user);
 
-            
+            uow.UserRepository.AddUser(user);
+            await uow.SaveAsync();
+            return StatusCode(201);
+
+
         }
 
-        public async Task<User> authenticate(string uemail,string password)
+        [HttpDelete("delete/{id}")]
+
+        public async Task<IActionResult> DeleteUser(int id)
         {
-            Console.WriteLine(uemail);
-            Console.WriteLine(password);
-            Console.WriteLine(dc.Users.FirstOrDefault(x=>x.email==uemail && x.password==password));
-            return dc.Users.FirstOrDefault(x=>x.email==uemail && x.password==password);
+            uow.UserRepository.DeleteUser(id);
+            await uow.SaveAsync();
+            return StatusCode(201);
         }
 
+       
         [HttpPost("login")]
-        public async Task<IActionResult> login(string email,string password){
-            var user = authenticate(email,password);
-            if(user==null)
+        public async Task<IActionResult> ulogin(UserLoginDto user)
+        {
+            var TempUser=await uow.UserRepository.login(user);
+            if(TempUser==null)
             {
                 return Unauthorized();
             }
-            return Ok(user);
+            return Ok(TempUser);
 
         }
 
-}
+    }
 }
 
 

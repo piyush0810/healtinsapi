@@ -1,3 +1,6 @@
+using healtinsapi.Data;
+using healtinsapi.Data.repository;
+using healtinsapi.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -34,6 +37,7 @@ namespace poc
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "poc", Version = "v1" });
             });
+            services.AddScoped<IUnitOfWork,UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

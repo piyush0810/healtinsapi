@@ -15,6 +15,9 @@ namespace healtinsapi.Data
         }
         public IUserRepository UserRepository =>
         new UserRepository(dc);
+
+        public IPolicyRepository PolicyRepository =>
+        new PolicyRepository(dc);
         public async Task<bool> SaveAsync()
         {
             return await dc.SaveChangesAsync() > 0;

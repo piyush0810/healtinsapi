@@ -5979,30 +5979,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Brownie\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\pkuma701\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Brownie\\source\\repos\\poc\\poc.csproj",
+      "projectUniqueName": "C:\\users\\pkuma701\\documents\\insbackend\\healtinsapi\\poc.csproj",
       "projectName": "poc",
-      "projectPath": "C:\\Users\\Brownie\\source\\repos\\poc\\poc.csproj",
-      "packagesPath": "C:\\Users\\Brownie\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Brownie\\source\\repos\\poc\\obj\\",
+      "projectPath": "C:\\users\\pkuma701\\documents\\insbackend\\healtinsapi\\poc.csproj",
+      "packagesPath": "C:\\Users\\pkuma701\\.nuget\\packages\\",
+      "outputPath": "C:\\users\\pkuma701\\documents\\insbackend\\healtinsapi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Brownie\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\pkuma701\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -6064,7 +6058,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.302\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }

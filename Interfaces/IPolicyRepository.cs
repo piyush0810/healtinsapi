@@ -8,6 +8,7 @@ namespace healtinsapi.Interfaces
     {
         Task<IEnumerable<Policy>> GetPoliciesAsync();
          IEnumerable<Policy> GetPoliciesoftermAsync(string s);
+         Task<Policy> FindPolicy(int Id);
 
 
         void AddPolicy(Policy policy);

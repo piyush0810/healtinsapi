@@ -27,11 +27,17 @@ namespace healtinsapi.Data.repository
             dc.Policies.Remove(policy);
         }
 
+        public async Task<Policy> FindPolicy(int Id)
+        {
+            return await dc.Policies.FindAsync(Id);
+        }
+
         public async Task<IEnumerable<Policy>> GetPoliciesAsync()
         {
             return await dc.Policies.ToListAsync();
         }
 
+        
         public IEnumerable<Policy> GetPoliciesoftermAsync(string s)
         {
              IQueryable<Policy> q=dc.Policies.FromSqlRaw($"SELECT * FROM Policies WHERE coverName LIKE '%{s}%'");

@@ -38,6 +38,7 @@ namespace poc
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "poc", Version = "v1" });
             });
             services.AddScoped<IUnitOfWork,UnitOfWork>();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

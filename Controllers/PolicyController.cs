@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using healtinsapi.Data;
 using healtinsapi.Interfaces;
@@ -32,6 +33,27 @@ namespace healtinsapi.Controllers
             var policies = uow.PolicyRepository.GetPoliciesoftermAsync(term);
 
             return Ok(policies);
+
+        }
+
+        [HttpPut("update/{id}")]
+        public async Task<IActionResult> UpdateCity(int id,Policy policy)
+        {
+            // Console.WriteLine(policy.policyType);
+            var PolicyFromDb = await uow.PolicyRepository.FindPolicy(id);
+            if(PolicyFromDb!=null){
+            PolicyFromDb.policyType=policy.policyType;
+            PolicyFromDb.coverName=policy.coverName;
+            PolicyFromDb.coverUpto=policy.coverUpto;
+            PolicyFromDb.description=policy.description;
+            PolicyFromDb.email=policy.email;
+            PolicyFromDb.premium=policy.premium;
+            PolicyFromDb.sumInsured=policy.sumInsured;
+            PolicyFromDb.termsConditions=policy.termsConditions;
+            PolicyFromDb.userId=policy.userId;
+            await uow.SaveAsync();
+            return StatusCode(201);}
+            return Unauthorized();
 
         }
 

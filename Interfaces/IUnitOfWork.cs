@@ -6,6 +6,9 @@ namespace healtinsapi.Interfaces
     {
          IUserRepository UserRepository {get;}
          IPolicyRepository PolicyRepository{get;}
+
+         IPurchaseRepository PurchaseRepository{get;}
+         
          Task<bool> SaveAsync();
     }
 }

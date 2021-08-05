@@ -36,6 +36,16 @@ namespace healtinsapi.Controllers
 
         }
 
+        [HttpGet("detail/{id}")]
+        public async Task<IActionResult> GetPoliciesforIdAsync(int id)
+        {
+            var PolicyFromDb = await uow.PolicyRepository.FindPolicy(id);
+            if(PolicyFromDb!=null){
+            return Ok(PolicyFromDb);}
+            return Unauthorized();
+
+        }
+
         [HttpPut("update/{id}")]
         public async Task<IActionResult> UpdateCity(int id,Policy policy)
         {

@@ -15,6 +15,8 @@ namespace healtinsapi.Data
         }
         public IUserRepository UserRepository =>
         new UserRepository(dc);
+        public IPurchaseRepository PurchaseRepository =>
+        new PurchaseRepository(dc);
 
         public IPolicyRepository PolicyRepository =>
         new PolicyRepository(dc);

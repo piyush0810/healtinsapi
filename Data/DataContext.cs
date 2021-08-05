@@ -16,5 +16,6 @@ namespace poc.Data
         public DbSet<User> Users {get;set;}
 
         public DbSet<Policy> Policies {get;set;}
+        public DbSet<Purchase> Purchases {get;set;}
     }
 }

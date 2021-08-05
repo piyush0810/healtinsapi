@@ -17,5 +17,7 @@ namespace poc.Models
         public string termsConditions { get; set; }
         public string email { get; set; }
 
+        public string userId {get;set;}
+
     }
 }

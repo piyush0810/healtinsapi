@@ -26,6 +26,15 @@ namespace healtinsapi.Controllers
 
         }
 
+        [HttpGet("{term}")]
+        public IActionResult GetPoliciesforterm(string term)
+        {
+            var policies = uow.PolicyRepository.GetPoliciesoftermAsync(term);
+
+            return Ok(policies);
+
+        }
+
         [HttpPost("ADD")]
         public async Task<IActionResult> AddPolicy(Policy policy)
         {

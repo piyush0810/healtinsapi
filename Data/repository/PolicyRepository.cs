@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using healtinsapi.Interfaces;
 using Microsoft.EntityFrameworkCore;
@@ -29,6 +30,13 @@ namespace healtinsapi.Data.repository
         public async Task<IEnumerable<Policy>> GetPoliciesAsync()
         {
             return await dc.Policies.ToListAsync();
+        }
+
+        public IEnumerable<Policy> GetPoliciesoftermAsync(string s)
+        {
+             IQueryable<Policy> q=dc.Policies.FromSqlRaw($"SELECT * FROM Policies WHERE coverName LIKE '%{s}%'");
+             List<Policy> l = q.ToList();
+             return l;
         }
     }
 }

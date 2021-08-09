@@ -7,6 +7,7 @@ namespace healtinsapi.Interfaces
     public interface IPolicyRepository
     {
         Task<IEnumerable<Policy>> GetPoliciesAsync();
+        IEnumerable<Policy> GetMyPoliciesAsync(int id);
          IEnumerable<Policy> GetPoliciesoftermAsync(string s);
          Task<Policy> FindPolicy(int Id);
 

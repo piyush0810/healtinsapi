@@ -32,6 +32,13 @@ namespace healtinsapi.Data.repository
             return await dc.Policies.FindAsync(Id);
         }
 
+        public IEnumerable<Policy> GetMyPoliciesAsync(int id)
+        {
+            IQueryable<Policy> q=dc.Policies.FromSqlRaw($"SELECT * FROM Policies WHERE userId LIKE '%{id}%'");
+             List<Policy> l = q.ToList();
+             return l;
+        }
+
         public async Task<IEnumerable<Policy>> GetPoliciesAsync()
         {
             return await dc.Policies.ToListAsync();

@@ -36,6 +36,15 @@ namespace healtinsapi.Controllers
 
         }
 
+         [HttpGet("mycreate/{id}")]
+        public IActionResult GetPoliciesCreatedById(int id)
+        {
+            var policies = uow.PolicyRepository.GetMyPoliciesAsync(id);
+
+            return Ok(policies);
+
+        }
+
         [HttpGet("detail/{id}")]
         public async Task<IActionResult> GetPoliciesforIdAsync(int id)
         {
@@ -86,6 +95,8 @@ namespace healtinsapi.Controllers
             await uow.SaveAsync();
             return StatusCode(201);
         }
+
+
 
        
         

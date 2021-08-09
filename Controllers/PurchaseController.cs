@@ -56,6 +56,16 @@ namespace healtinsapi.Controllers
             return Ok(policies);
 
         }
+
+        // [HttpGet("check/{id}/{pid}")]
+
+        // public  IActionResult Checkpurchase(int id,int pid)
+        // {
+        //     var policies =  uow.PurchaseRepository.GetMyPolicies(id);
+        //     Console.WriteLine("hui");
+        //     return Ok(policies);
+
+        // }
         
     }
 }
